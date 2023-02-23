@@ -29,7 +29,7 @@ namespace ProyectoFinalVP1
         private void btnCalcular_Click(object sender, EventArgs e)
         {
             double VT, CV, UTB, GOP, UTOP, GV, UTAI, IR, UTNe;
-            string NomEmpresa;
+            
 
             if (txtNombreEmpresa.Text == "")
             {
@@ -164,7 +164,55 @@ namespace ProyectoFinalVP1
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            string NomEmpresa = txtNombreEmpresa.Text; 
+            if (txtUtilidadNeta.Text == "")
+            {
+                MessageBox.Show("Calcular utilidad neta para avanzar");
+            }
+            else
+            {
 
+
+
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+
+                }
+
+                DataGridViewRow row = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+               
+
+                row.Cells[0].Value = txtNombreEmpresa.Text;
+                row.Cells[1].Value = dtpF1.Text;
+                row.Cells[2].Value = dtpF2.Text;
+                row.Cells[3].Value = mtxtVentasTotales.Text;
+                row.Cells[4].Value = mtxtCostoDeVentas.Text;
+                row.Cells[5].Value = txtUtilidadBruta.Text;
+                row.Cells[6].Value = mtxtGastosDeOperacion.Text;
+                row.Cells[7].Value = txtUtilidadDeOperacion.Text;
+                row.Cells[8].Value = mtxtGastosVenta.Text;
+                row.Cells[9].Value = txtUtilidadAntesImpuesto.Text;
+                row.Cells[10].Value = txtIR.Text;
+                row.Cells[11].Value = txtUtilidadNeta.Text;
+
+
+                dataGridView1.Rows.Add(row);
+
+
+                mtxtGastosDeOperacion.Clear();
+                mtxtVentasTotales.Clear();
+                mtxtCostoDeVentas.Clear();
+                mtxtGastosVenta.Clear();
+
+
+                txtUtilidadAntesImpuesto.Clear();
+                txtUtilidadDeOperacion.Clear();
+                txtUtilidadBruta.Clear();
+                txtUtilidadNeta.Clear();
+                txtIR.Clear();
+
+                txtNombreEmpresa.Focus();
+            }
         }
     }
 }
