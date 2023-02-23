@@ -321,6 +321,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -335,10 +336,11 @@
             this.Column10,
             this.Column11,
             this.Column12});
-            this.dataGridView1.Location = new System.Drawing.Point(316, 155);
+            this.dataGridView1.Location = new System.Drawing.Point(302, 155);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(472, 306);
+            this.dataGridView1.Size = new System.Drawing.Size(583, 306);
             this.dataGridView1.TabIndex = 28;
             // 
             // Column1
@@ -441,7 +443,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 476);
+            this.ClientSize = new System.Drawing.Size(897, 504);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtIR);
             this.Controls.Add(this.treeView1);

@@ -17,11 +17,11 @@ namespace ProyectoFinalVP1
             txtUtilidadNeta.Enabled = false;
             txtIR.Enabled = false;
 
-            //se necesita calcular la utilidad bruta para desbloquear
-            mtxtGastosDeOperacion.Enabled = false;
+            ////se necesita calcular la utilidad bruta para desbloquear
+            //mtxtGastosDeOperacion.Enabled = false;
 
-            //se necesita calcular la utilidad de operacion para desbloquear
-            mtxtGastosVenta.Enabled = false;
+            ////se necesita calcular la utilidad de operacion para desbloquear
+            //mtxtGastosVenta.Enabled = false;
 
 
         }
@@ -46,10 +46,10 @@ namespace ProyectoFinalVP1
             }
             else
             {
-                VT = Convert.ToDouble(mtxtVentasTotales);
-                CV = Convert.ToDouble(mtxtCostoDeVentas);
-                GOP = Convert.ToDouble(mtxtGastosDeOperacion);
-                GV = Convert.ToDouble(mtxtGastosVenta);
+                VT = Convert.ToDouble(mtxtVentasTotales.Text);
+                CV = Convert.ToDouble(mtxtCostoDeVentas.Text);
+                GOP = Convert.ToDouble(mtxtGastosDeOperacion.Text);
+                GV = Convert.ToDouble(mtxtGastosVenta.Text);
 
 
                 if (treeView1.SelectedNode.Text.Equals("Utilidad bruta"))
@@ -65,13 +65,13 @@ namespace ProyectoFinalVP1
                         mtxtCostoDeVentas.Focus();
                     }
 
-                    if (VT > 10000 || VT < 10000000 || CV > 5000 || CV < 5000000)
+                    if (VT > 10000 && VT < 10000000 && CV > 5000 && CV < 5000000)
                     {
                         //primer paso
                         UTB = VT - CV;
 
                         txtUtilidadBruta.Text = UTB.ToString();
-                        mtxtGastosDeOperacion.Enabled = true;
+                        //mtxtGastosDeOperacion.Enabled = true;
 
                         if (treeView1.SelectedNode.Text.Equals("Utilidad de operacion"))
                         {
@@ -87,7 +87,7 @@ namespace ProyectoFinalVP1
                                 UTOP = UTB - GOP;
 
                                 txtUtilidadDeOperacion.Text = UTOP.ToString();
-                                mtxtGastosVenta.Enabled = true;
+                                //mtxtGastosVenta.Enabled = true;
 
                                 if (treeView1.SelectedNode.Text.Equals("Utilidad a/impuesto"))
                                 {
